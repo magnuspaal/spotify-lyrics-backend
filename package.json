@@ -1,7 +1,7 @@
 {
 	"name": "spotify-lyrics-backend",
 	"description": "An app that takes your currently playing song on spotify and displays lyrics for that song from Genius.com.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"requires": true,
 	"author": "Magnus Paal",
 	"lockfileVersion": 1,
@@ -9,7 +9,7 @@
 		"start": "nodemon -r dotenv/config ./src/app.ts dotenv_config_path=.env.local",
 		"build": "tsc | echo",
 		"version": "node cicd/deploy/version $npm_package_version",
-    "postversion": "git add . && git commit -m \"docs: bump to $npm_package_version\" && git tag -a $npm_package_version -m \"\""
+		"postversion": "git add . && git commit -m \"docs: bump to $npm_package_version\" && git tag -a $npm_package_version -m \"\""
 	},
 	"dependencies": {
 		"axios": "^0.26.1",

@@ -3,7 +3,7 @@ version: "3.7"
 services:
   spotify-lyrics-backend:
     container_name: spotify-lyrics-backend
-    image: registry.digitalocean.com/magnus-images/spotify-lyrics:backend-1.0.0
+    image: registry.digitalocean.com/magnus-images/spotify-lyrics:backend-1.0.1
     networks:
       - network
     restart: unless-stopped
