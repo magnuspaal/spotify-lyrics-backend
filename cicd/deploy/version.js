@@ -3,7 +3,7 @@ fs = require('fs');
 const compose = 'cicd/deploy/docker-compose.yml';
 const newVersion = process.argv[2]
 
-bumpVersion(compose, /^(\s+image.*social-frontend:)(.+)$/m, newVersion);
+bumpVersion(compose, /^(\s+image.*spotify-lyrics:backend-)(.+)$/m, newVersion);
 
 function bumpVersion(file, regexp, version) {
   fs.readFile(file, "utf-8", (err, data) => {

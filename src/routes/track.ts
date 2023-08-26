@@ -37,7 +37,7 @@ router.post("/lyrics", (req: Request, res: Response) => {
 		})
 		.catch((error: AxiosError) => {
 			res.status(error.response?.status || 500);
-			return res.send({ message: error.response?.data });
+			return res.send({ message: "Lyrics not available" });
 		});
 });
 
