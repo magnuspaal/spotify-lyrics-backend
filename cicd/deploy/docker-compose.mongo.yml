@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  spotify-mongo:
+    container_name: spotify-mongo
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_DATABASE: spotify
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - 27017
+    networks:
+      - network
+    restart: unless-stopped
+
+networks:
+  network:
+    external: true
+    name: spotify-lyrics

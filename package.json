@@ -1,0 +1,41 @@
+{
+	"name": "spotify-lyrics-backend",
+	"description": "An app that takes your currently playing song on spotify and displays lyrics for that song from Genius.com.",
+	"version": "1.0.0",
+	"requires": true,
+	"author": "Magnus Paal",
+	"lockfileVersion": 1,
+	"scripts": {
+		"start": "nodemon -r dotenv/config ./src/app.ts dotenv_config_path=.env.local",
+		"build": "tsc | echo",
+		"version": "node cicd/deploy/version $npm_package_version",
+    "postversion": "git add . && git commit -m \"docs: bump to $npm_package_version\" && git tag -a $npm_package_version -m \"\""
+	},
+	"dependencies": {
+		"axios": "^0.26.1",
+		"bcrypt": "^5.0.1",
+		"connect-mongo": "^4.6.0",
+		"cors": "^2.8.5",
+		"crypto-js": "^4.1.1",
+		"dotenv": "^16.0.0",
+		"express": "^4.17.1",
+		"express-session": "^1.17.3",
+		"moment": "^2.29.3",
+		"mongoose": "^6.3.4",
+		"querystring": "^0.2.1"
+	},
+	"devDependencies": {
+		"@types/axios": "^0.14.0",
+		"@types/cookie-parser": "^1.4.3",
+		"@types/cors": "^2.8.12",
+		"@types/crypto-js": "^4.1.1",
+		"@types/express": "^4.17.13",
+		"@types/express-session": "^1.17.4",
+		"@types/request": "^2.48.8",
+		"nodemon": "^3.0.1",
+		"ts-node": "^10.7.0",
+		"typescript": "^4.6.4"
+	},
+	"main": "./src/app.ts",
+	"license": "ISC"
+}
